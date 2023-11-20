@@ -10,9 +10,7 @@ window.onload = function () {
     // Apply slide-in animation on load
     triggerSlideInAnimation();
 
-    // Add these lines to apply the active class and start info animation
-    const profileInfo = document.querySelector('.profile-info');
-    profileInfo.classList.add('active');
+
 
     // Listen for the end of the profile pic transition
     const profilePic = document.getElementById('profile-pic');
