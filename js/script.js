@@ -101,7 +101,7 @@ function submitForm() {
     formData.append("message", message);
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://formspree.io/f/mleykvjy", true); // Update with your Formspree endpoint
+    xhr.open("POST", "https://formspree.io/f/mgejbqko", true); // Update with your Formspree endpoint
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
