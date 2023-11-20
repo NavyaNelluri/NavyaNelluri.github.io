@@ -10,22 +10,23 @@ window.onload = function () {
     // Apply slide-in animation on load
     triggerSlideInAnimation();
 
-    // Add these lines to apply the active class and start info animation
-    const profileInfo = document.querySelector('.profile-info');
-    profileInfo.classList.add('active');
+
 
     // Listen for the end of the profile pic transition
     const profilePic = document.getElementById('profile-pic');
     profilePic.addEventListener('transitionend', function () {
         // Trigger the animation for profile info after the profile pic transition is complete
-        profileInfo.classList.add('info-slide-in');
     });
 
     // Trigger the animation for profile pic and info on every refresh
     triggerSlideInAnimation();
-    profileInfo.classList.add('info-slide-in');
 };
+function toggleProfileInfo() {
+    var profileInfo = document.getElementById("profile-info");
+    profileInfo.classList.toggle("active");
+}
 
+document.getElementById("profile-pic").addEventListener("click", toggleProfileInfo);
 // Function to trigger slide-in animation
 function triggerSlideInAnimation() {
     const profilePic = document.getElementById('profile-pic');
@@ -67,11 +68,7 @@ function adjustImageStyleWithAnimation() {
         profilePic.classList.remove('border-transition');
     }, 500); // Adjust the duration to match the CSS transition duration
 }
-//education details toggle
-function toggleDetails(elementId) {
-        const details = document.getElementById(elementId);
-        details.classList.toggle('show-details');
-    }
+
 
 
 
