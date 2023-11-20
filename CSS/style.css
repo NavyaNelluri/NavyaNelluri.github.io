@@ -1,0 +1,317 @@
+/* General styles for larger screens */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.5s, color 0.5s;
+    margin: 0; /* Remove default margin to ensure full width */
+}
+
+/* Navigation styles */
+nav {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0; /* Remove default margin */
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: white;
+}
+/* Add more styles for dark theme as needed */
+
+#profile-pic {
+    width: 400px; /* Adjust the size as needed */
+    height: 450px; /* Adjust the size as needed */
+    border: 3px solid #fff; /* Border color */
+    border-radius: 15px; /* Adjust the border-radius to create a rounded square effect */
+    margin: 20px; /* Adjust the margin as needed */
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Transition effects for border color and size change */
+    position: absolute;
+	top: 30px;
+    left: -250px; /* Initial position outside the viewport */
+    z-index: -1; /* Set a higher z-index to ensure the image appears behind other content */
+    cursor: pointer; /* Add cursor pointer for interaction */
+}
+
+.profile-info {
+    position: absolute;
+    top: 20%; /* Adjust the top position */
+    left: 60%;
+    text-align: left;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.profile-info.active {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+#home {
+    padding-top: 200px; /* Adjust the padding for smaller screens */
+    position: relative;
+}
+
+#home header {
+    text-align: center; /* Center text within header */
+}
+
+#profile-pic:hover {
+    border-color: #ffa500;
+    transform: scale(1.1);
+}
+
+body.dark-theme #profile-pic {
+    border-color: #fff;
+}
+
+body.dark-theme #profile-pic:hover {
+    border-color: #ffa500;
+}
+
+/* Animation for sliding in */
+@keyframes slideIn {
+    to {
+        left: 20px;
+    }
+}
+
+#profile-pic.slide-in {
+    animation: slideIn 1s forwards;
+}
+
+.bigfont, .smallfont {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bigfont {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.smallfont {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Education History */
+#education {
+    position: relative;
+    z-index: 1; /* Ensure it's greater than z-index of the elements it overlaps */
+	padding: 350px 0 100px; /* Adjust padding as needed for spacing */
+
+}
+#education {
+    position: relative;
+    z-index: 1;
+    padding: 350px 0 100px; /* Adjust padding as needed for spacing */
+    color: black; /* Default text color for education section */
+}
+
+/* Add more styles for dark theme as needed */
+body.dark-theme #education {
+    color: white; /* White text color for education section in dark theme */
+}
+body.dark-theme .education-entry {
+    color: black; /* Black font color for education entries in dark theme */
+}
+
+#education h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.education-entry {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for separation */
+    overflow: hidden; /* Hide overflow to keep details within the entry */
+
+}
+
+/* Add color to each education entry */
+.education-entry:nth-child(odd) {
+    background-color: #f7f7f7; /* Light background color for odd entries */
+}
+
+.education-entry:nth-child(even) {
+    background-color: #e0e0e0; /* Lighter background color for even entries */
+}
+
+/* Apply parallax effect on hover */
+
+.details {
+    display: none;
+    padding: 10px;
+	transition: max-height 0.3s ease; /* Add a transition effect for smoother changes */
+
+}
+.show-details {
+    display: block;
+}
+
+/* Apply parallax effect on hover */
+.education-entry {
+    transition: transform 0.5s ease; /* Add a transition effect for smoother changes */
+}
+
+/* Center text within education-entry */
+.education-entry h3,
+.education-entry p {
+    transition: transform 0.5s ease; /* Add a transition effect for smoother changes */
+}
+
+
+
+/* Adjust scale during hover for text elements */
+.education-entry:hover {
+    transform: scale(1.05);
+}
+
+
+/* Work Experience */
+#work {
+    position: relative;
+    z-index: 1;
+    padding: 100px 0 50px; /* Adjust padding as needed for spacing */
+	overflow: hidden; /* Hide overflow to keep details within the entry */
+
+}
+
+#work h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.work-entry {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Add a transition effect for smoother changes */
+    background-color: #f0f0f0; /* Light background color for work entries */
+}
+
+/* Apply hover effect */
+.work-entry:hover {
+    transform: scale(1.02);
+    background-color: #e0e0e0; /* Lighter background color on hover */
+}
+body.dark-theme .work-entry {
+    color: black; /* Black font color for education entries in dark theme */
+}
+
+.work-entry h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.work-entry p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.work-entry ul {
+    list-style-type: none;
+    padding: 30px;
+    margin: 30px 60px;
+}
+
+/* Add animation to list items */
+.work-entry li {
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.work-entry:hover li {
+    opacity: 1;
+    transform: translateX(10);
+}
+
+
+/* Media queries for responsive design */
+@media only screen and (max-width: 768px) {
+    #home {
+        padding-top: 150px;
+    }
+
+    #profile-pic {
+        max-width: 300px;
+    }
+
+    .profile-info {
+        top: 10%;
+    }
+
+    #education, #work, #contact {
+        padding: 20px 10px;
+    }
+}
+
+
+/* Contact Page */
+#contact {
+    position: relative;
+    z-index: 1;
+    padding: 100px 0 50px; /* Adjust padding as needed for spacing */
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #2980b9;
+}
+
