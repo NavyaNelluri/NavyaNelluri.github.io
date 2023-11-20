@@ -18,12 +18,10 @@ window.onload = function () {
     const profilePic = document.getElementById('profile-pic');
     profilePic.addEventListener('transitionend', function () {
         // Trigger the animation for profile info after the profile pic transition is complete
-        profileInfo.classList.add('info-slide-in');
     });
 
     // Trigger the animation for profile pic and info on every refresh
     triggerSlideInAnimation();
-    profileInfo.classList.add('info-slide-in');
 };
 function toggleProfileInfo() {
     var profileInfo = document.getElementById("profile-info");
