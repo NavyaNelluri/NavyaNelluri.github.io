@@ -47,21 +47,21 @@ body.dark-theme {
 }
 
 .profile-info {
-    position: absolute;
-    top: 20%;
-    left: 60%;
-    text-align: left;
-    transform: translate(-50%, 100%);
-    opacity: 0;
-    height: 0; /* Set initial height to 0 */
-    overflow: hidden; /* Hide the content initially */
-    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
+    position: absolute !important;
+    top: 20% !important;
+    left: 60% !important;
+    text-align: left !important;
+    transform: translate(-50%, 100%) !important;
+    opacity: 0 !important;
+    max-height: 0 !important; /* Set initial max-height to 0 */
+    overflow: hidden !important; /* Hide the content initially */
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease !important;
 }
 
 .profile-info.active {
-    opacity: 1;
-    height: auto; /* Set the height to auto when active, revealing the content */
-    transform: translate(-50%, 0);
+    opacity: 1 !important;
+    max-height: 500px !important; /* Adjust the max-height as needed */
+    transform: translate(-50%, 0) !important;
 }
 
 
