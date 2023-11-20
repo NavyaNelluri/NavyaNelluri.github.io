@@ -91,6 +91,16 @@ function submitForm() {
 }
 //submitform
 function submitForm() {
+    var form = document.getElementById("contactForm");
+    var formData = new FormData(form);
+
+    // Your existing AJAX code to handle form submission
+
+    // Prevent the default form submission
+    e.preventDefault();
+}
+
+function submitForm() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var message = document.getElementById("message").value;
@@ -101,11 +111,11 @@ function submitForm() {
     formData.append("message", message);
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "process_contact_form.php", true);
+    xhr.open("POST", "https://formspree.io/f/mleykvjy", true); // Update with your Formspree endpoint
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
+            if (xhr.status == 200 || xhr.status == 0) { // Status 0 is for local testing
                 // Handle the response, you can show a success message or redirect the user
                 if (xhr.responseText === "success") {
                     console.log("Form submitted successfully!");
