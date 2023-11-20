@@ -53,16 +53,15 @@ body.dark-theme {
     text-align: left;
     transform: translate(-50%, 100%);
     opacity: 0;
-    visibility: hidden; /* Initially hide the profile-info */
-
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    height: 0; /* Set initial height to 0 */
+    overflow: hidden; /* Hide the content initially */
+    transition: opacity 0.5s ease, transform 0.5s ease, height 0.5s ease;
 }
 
 .profile-info.active {
-	    opacity: 0;
-
-        display: none; /* Initially hide the profile-info */
-
+    opacity: 1;
+    height: auto; /* Set the height to auto when active, revealing the content */
+    transform: translate(-50%, 0);
 }
 
 
