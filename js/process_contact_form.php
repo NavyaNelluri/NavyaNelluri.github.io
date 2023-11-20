@@ -14,11 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $body .= "Email: $email\n\n";
     $body .= "Message:\n$message";
 
-    // Send the email
-    mail($to, $subject, $body, $headers);
+    // Send the email and check if it was sent successfully
+    $mailSent = mail($to, $subject, $body, $headers);
 
-    // You can send a response back to the client if needed
-    echo "success";
+    if ($mailSent) {
+        // You can send a success response back to the client
+        echo "success";
+    } else {
+        // You can send an error response back to the client
+        echo "error";
+    }
 } else {
     // If the request is not POST, redirect to an error page or handle accordingly
     header("Location: error.html");
