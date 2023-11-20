@@ -46,7 +46,7 @@ body.dark-theme {
     cursor: pointer; /* Add cursor pointer for interaction */
 }
 
-#profile-info {
+.profile-info {
     position: absolute;
     top: 20%;
     left: 60%;
@@ -54,14 +54,15 @@ body.dark-theme {
     transform: translate(-50%, 100%);
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
-    pointer-events: none; /* Ensure it's not clickable initially */
+    pointer-events: none; /* Add this to make sure it doesn't block clicks */
 }
 
-#profile-info.active {
+.profile-info.active {
     opacity: 1;
     transform: translate(-50%, 0);
-    pointer-events: auto; /* Make it clickable when active */
+    pointer-events: auto; /* Allow clicks when active */
 }
+
 
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
