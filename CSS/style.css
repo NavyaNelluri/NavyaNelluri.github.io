@@ -57,6 +57,8 @@ body.dark-theme {
 }
 
 .profile-info.active {
+	    opacity: 0;
+
         display: none; /* Initially hide the profile-info */
 
 }
