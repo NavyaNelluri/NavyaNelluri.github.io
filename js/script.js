@@ -10,12 +10,11 @@ window.onload = function () {
     // Apply slide-in animation on load
     triggerSlideInAnimation();
 
-
-
     // Listen for the end of the profile pic transition
     const profilePic = document.getElementById('profile-pic');
     profilePic.addEventListener('transitionend', function () {
         // Trigger the animation for profile info after the profile pic transition is complete
+        document.getElementById("profile-pic").addEventListener("click", toggleProfileInfo);
     });
 
     // Trigger the animation for profile pic and info on every refresh
