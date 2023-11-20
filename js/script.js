@@ -89,4 +89,34 @@ function submitForm() {
     document.getElementById('email').value = '';
     document.getElementById('message').value = '';
 }
+//submitform
+function submitForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("message", message);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "process_contact_form.php", true);
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Handle the response, you can show a success message or redirect the user
+            if (xhr.responseText === "success") {
+                console.log("Form submitted successfully!");
+                // You can add a success message or redirect the user to a thank you page
+            } else {
+                console.log("Error submitting form!");
+                // Handle the error, show an error message or redirect the user to an error page
+            }
+        }
+    };
+
+    xhr.send(formData);
+}
+
 
