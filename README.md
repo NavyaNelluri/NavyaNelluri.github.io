@@ -1,1 +1,105 @@
-# NavyaNelluri.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your professional portfolio description goes here.">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+    <title>Navya Chowdary Nelluri - Portfolio</title>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav role="navigation">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#work">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="toggle-theme">Toggle Theme</button>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home">
+		<div class="profile-info">
+            <h1 class="bigfont">Navya Chowdary Nelluri</h1>
+			<h1 class="bigfont">About Me</h1>
+            <p class="smallfont">👋 Hello! I'm Navya Chowdary Nelluri, a passionate and driven master's student at Saint Louis University.</p>
+			<p class="smallfont">I am an advocate for continuous learning and innovation. I believe in the power of collaboration and am excited about the prospect of contributing to projects that make a meaningful impact. As you explore my portfolio, you'll discover a blend of theoretical knowledge and practical applications, showcasing my dedication to bridging the gap between academia and industry.</p>
+		</div>
+        <img src="images/profile.jpg" alt="Profile Picture" id="profile-pic">
+    </section>
+
+    <!-- Education History -->
+    <section id="education">
+        <header>
+            <h2>Education</h2>
+        </header>
+        <div class="education-entry" onclick="toggleDetails('master-details')">
+            <h3>Master's, Saint Louis University</h3>
+            <p>2022 - Present</p>
+			<div id="master-details" class="details">
+				<p>-Master’s from Saint Louis University with 3.8 GPA (till date).</p>
+			</div>
+		</div>
+        <div class="education-entry" onclick="toggleDetails('Bachelor-details')">
+            <h3>Bachelor of Technology, MLR Institute of Technology</h3>
+            <p>2015 - 2019</p>
+			<div id="Bachelor-details" class="details">
+				<p>-Undergraduation (B. Tech) from MLR Institute of Technology, India with 9.7 CGPA.</p>
+			</div>
+		</div>
+		<div class="education-entry" onclick="toggleDetails('school-details')">
+            <h3>High School, Sri Chaitanya concept school</h3>
+            <p>2013 - 2015</p>
+			<div id="school-details" class="details">
+				<p>-Maths, physics & chemistry from Sri Chaitanya concept school, India with 93%.</p>
+			</div>
+		</div>    </section>
+
+    <!-- Work Experience -->
+    <section id="work">
+        <header>
+            <h2>Work Experience</h2>
+        </header>
+        <div class="work-entry">
+            <h3>Associate Consultant, Capgemini, India</h3>
+            <p>August 2019 - December 2021</p>
+            <ul>
+                <li>2.5 years of experience in Data analysis, Development, and implementation of pipeline for data loading into the warehouse.</li>
+                <!-- Add more details about your responsibilities and accomplishments -->
+            </ul>
+			<h3> Project: Warner Bros</h3>
+            <p>The primary objective of this project is to load data from various sources such as SFTP, S3 Buckets, etc., for Consumer Products applications into Snowflake Data warehouse. We perform various transformations and actions on data as per business requirements. Further, this summarized data is being used for customer insights data, which helps the business understand customer requirements.</p>
+            
+        </div>
+        <!-- Add additional work entries as needed -->
+    </section>
+
+    <!-- Contact Page -->
+<!-- Contact Page -->
+<section id="contact">
+    <header>
+        <h2>Contact Me</h2>
+    </header>
+    <div class="contact-info">
+        <p>Let's connect! Feel free to reach out through the form below or via email at navya.nelluri981@gmail.com. Phone: +1 314-791-4685</p>
+    </div>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="button" onclick="submitForm()">Send Message</button>
+    </form>
+</section>
+
+
+</body>
+</html>
