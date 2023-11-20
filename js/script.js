@@ -25,7 +25,12 @@ window.onload = function () {
     triggerSlideInAnimation();
     profileInfo.classList.add('info-slide-in');
 };
+function toggleProfileInfo() {
+    var profileInfo = document.getElementById("profile-info");
+    profileInfo.classList.toggle("active");
+}
 
+document.getElementById("profile-pic").addEventListener("click", toggleProfileInfo);
 // Function to trigger slide-in animation
 function triggerSlideInAnimation() {
     const profilePic = document.getElementById('profile-pic');
@@ -69,12 +74,7 @@ function adjustImageStyleWithAnimation() {
 }
 
 
-function toggleProfileInfo() {
-    var profileInfo = document.getElementById("profile-info");
-    profileInfo.classList.toggle("active");
-}
 
-document.getElementById("profile-pic").addEventListener("click", toggleProfileInfo);
 
 function submitForm() {
     var name = document.getElementById("name").value;
