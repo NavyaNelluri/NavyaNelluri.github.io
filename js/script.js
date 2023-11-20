@@ -13,10 +13,10 @@ window.onload = function () {
     // Trigger the animation for profile pic and info on every refresh
     triggerSlideInAnimation();
 
-    // Add a timeout to delay attaching the click event listener
-    setTimeout(function () {
-        document.getElementById("profile-pic").addEventListener("click", toggleProfileInfo);
-    }, 500); // Adjust the duration to match the CSS transition duration
+    // Inside your window.onload function
+const profileInfo = document.querySelector('.profile-info');
+profileInfo.classList.add('active'); // Add the 'active' class to make it visible
+
 };
 function toggleProfileInfo() {
     var profileInfo = document.getElementById("profile-info");
