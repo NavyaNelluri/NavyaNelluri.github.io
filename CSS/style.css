@@ -52,15 +52,15 @@ body.dark-theme {
     left: 60%;
     text-align: left;
     transform: translate(-50%, 100%);
-    display: none; /* Initially hide the profile-info */
-    transition: transform 0.5s ease;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .profile-info.active {
+    opacity: 1;
     transform: translate(-50%, 0);
-    display: block; /* Show the profile-info when active */
+    pointer-events: auto; /* Allow clicks when active */
 }
-
 
 
 #home {
@@ -316,4 +316,3 @@ body.dark-theme .work-entry {
 .contact-form button:hover {
     background-color: #2980b9;
 }
-
