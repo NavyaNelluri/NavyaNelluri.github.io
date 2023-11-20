@@ -60,7 +60,9 @@ body.dark-theme {
     opacity: 1;
     transform: translate(-50%, 0);
 }
-
+        #profile-info {
+            display: none;
+        }
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
     position: relative;
