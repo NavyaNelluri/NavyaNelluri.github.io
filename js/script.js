@@ -91,16 +91,6 @@ function submitForm() {
 }
 //submitform
 function submitForm() {
-    var form = document.getElementById("contactForm");
-    var formData = new FormData(form);
-
-    // Your existing AJAX code to handle form submission
-
-    // Prevent the default form submission
-    e.preventDefault();
-}
-
-function submitForm() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var message = document.getElementById("message").value;
@@ -116,8 +106,11 @@ function submitForm() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200 || xhr.status == 0) { // Status 0 is for local testing
-                // Handle the response, you can show a success message or redirect the user
-                if (xhr.responseText === "success") {
+                // Parse the JSON response
+                var response = JSON.parse(xhr.responseText);
+                
+                // Check the 'success' property in the response
+                if (response.success) {
                     console.log("Form submitted successfully!");
                     // You can add a success message or redirect the user to a thank you page
                 } else {
@@ -133,6 +126,3 @@ function submitForm() {
 
     xhr.send(formData);
 }
-
-
-
