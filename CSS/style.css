@@ -47,22 +47,20 @@ body.dark-theme {
 }
 
 .profile-info {
-    position: absolute !important;
-    top: 20% !important;
-    left: 60% !important;
-    text-align: left !important;
-    transform: translate(-50%, 100%) !important;
-    opacity: 0 !important;
-    max-height: 0 !important; /* Set initial max-height to 0 */
-    overflow: hidden !important; /* Hide the content initially */
-    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.5s ease !important;
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    text-align: left;
+    transform: translate(-50%, 100%);
+    display: none; /* Initially hide the profile-info */
+    transition: transform 0.5s ease;
 }
 
 .profile-info.active {
-    opacity: 1 !important;
-    max-height: 500px !important; /* Adjust the max-height as needed */
-    transform: translate(-50%, 0) !important;
+    transform: translate(-50%, 0);
+    display: block; /* Show the profile-info when active */
 }
+
 
 
 #home {
