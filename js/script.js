@@ -67,6 +67,11 @@ function adjustImageStyleWithAnimation() {
         profilePic.classList.remove('border-transition');
     }, 500); // Adjust the duration to match the CSS transition duration
 }
+
+function toggleProfileInfo() {
+            var profileInfo = document.getElementById("profile-info");
+            profileInfo.style.display = (profileInfo.style.display === 'none') ? 'block' : 'none';
+        }
 //education details toggle
 function toggleDetails(elementId) {
         const details = document.getElementById(elementId);
