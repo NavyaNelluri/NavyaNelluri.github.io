@@ -69,9 +69,9 @@ function adjustImageStyleWithAnimation() {
 }
 
 function toggleProfileInfo() {
-            var profileInfo = document.getElementById("profile-info");
-            profileInfo.style.display = (profileInfo.style.display === 'none') ? 'block' : 'none';
-        }
+    var profileInfo = document.getElementById("profile-info");
+    profileInfo.classList.toggle("active");
+}
 //education details toggle
 function toggleDetails(elementId) {
         const details = document.getElementById(elementId);
