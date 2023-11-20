@@ -68,11 +68,7 @@ function adjustImageStyleWithAnimation() {
     }, 500); // Adjust the duration to match the CSS transition duration
 }
 
-function toggleProfileInfo() {
-    var profileInfo = document.getElementById("profile-info");
-    profileInfo.classList.toggle("active");
-}
-//education details toggle
+
 function toggleProfileInfo() {
     var profileInfo = document.getElementById("profile-info");
     profileInfo.classList.toggle("active");
