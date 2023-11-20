@@ -104,19 +104,25 @@ function submitForm() {
     xhr.open("POST", "process_contact_form.php", true);
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Handle the response, you can show a success message or redirect the user
-            if (xhr.responseText === "success") {
-                console.log("Form submitted successfully!");
-                // You can add a success message or redirect the user to a thank you page
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                // Handle the response, you can show a success message or redirect the user
+                if (xhr.responseText === "success") {
+                    console.log("Form submitted successfully!");
+                    // You can add a success message or redirect the user to a thank you page
+                } else {
+                    console.log("Error submitting form!");
+                    // Handle the error, show an error message or redirect the user to an error page
+                }
             } else {
-                console.log("Error submitting form!");
-                // Handle the error, show an error message or redirect the user to an error page
+                console.log("Error: " + xhr.status);
+                // Handle other HTTP status codes if needed
             }
         }
     };
 
     xhr.send(formData);
 }
+
 
 
