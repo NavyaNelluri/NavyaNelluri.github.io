@@ -65,23 +65,17 @@ body.dark-theme {
 #profile-info {
     position: absolute;
     top: 20%;
-    left: 60%;
-    text-align: left;
-    transform: translate(-50%, -50%); /* Update this line to center vertically */
-    opacity: 1; /* Set opacity to 1 for initial visibility */
-    color: #000;
-    visibility: visible; /* Set visibility to visible */
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.profile-info {
-    /* Remove 'display: none;' to ensure it's initially visible */
-    /* Add other styles as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0s 0.5s ease; /* Delay visibility */
 }
 
 .profile-info.visible {
-    /* Remove 'opacity' and 'visibility' properties here */
-    transition: opacity 0.5s, visibility 0.5s;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0s ease;
 }
 
 
