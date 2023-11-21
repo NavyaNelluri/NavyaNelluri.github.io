@@ -1,120 +1,121 @@
-// Function to trigger slide-in animation
-function triggerSlideInAnimation() {
-  const profilePic = document.getElementById('profile-pic');
-  profilePic.classList.add('slide-in');
-}
+window.onload = function () {
+    const themeToggle = document.getElementById('toggle-theme');
+    themeToggle.addEventListener('click', toggleTheme);
 
-// Function to toggle the visibility of profile-info
-// Function to toggle the visibility of profile-info
-function toggleProfileInfo() {
-    var profileInfo = document.getElementById("profile-info");
-    console.log('Toggle Profile Info function called');
-    if (profileInfo) {
-        console.log('Profile Info element found:', profileInfo);
-        // Toggle the 'visible' class to control visibility
-        profileInfo.classList.toggle('visible');
-
-        // Add a delay to ensure the class is toggled before the transition
-        setTimeout(() => {
-            // Toggle the 'show' class for smooth transition
-            profileInfo.classList.toggle('show');
-        }, 10);
-    } else {
-        console.error("Element with ID 'profile-info' not found.");
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
     }
-}
 
+    // Apply slide-in animation on load
+    triggerSlideInAnimation();
 
+    // Add these lines to apply the active class and start info animation
+    const profileInfo = document.querySelector('.profile-info');
+    profileInfo.classList.add('active');
 
-// Function to toggle theme
-function toggleTheme() {
-  document.body.classList.toggle('dark-theme');
-  // Save the theme preference to local storage
-  const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-  localStorage.setItem('theme', theme);
-
-  // Adjust image style based on theme with animation
-  adjustImageStyleWithAnimation();
-}
-
-// Adjust image style with animation
-function adjustImageStyleWithAnimation() {
-  const profilePic = document.getElementById('profile-pic');
-
-  // Add a class for the transition effect
-  profilePic.classList.add('border-transition');
-
-  // Adjust image style based on theme
-  adjustImageStyle();
-
-  // Remove the class after the transition is complete
-  setTimeout(() => {
-    profilePic.classList.remove('border-transition');
-  }, 500); // Adjust the duration to match the CSS transition duration
-}
-
-// Adjust image style
-function adjustImageStyle() {
-  const profilePic = document.getElementById('profile-pic');
-
-  // Check if the theme is dark, and adjust image style accordingly
-  if (document.body.classList.contains('dark-theme')) {
-    profilePic.classList.add('dark-theme');
-  } else {
-    profilePic.classList.remove('dark-theme');
-  }
-}
-
-// Function to toggle education details
-function toggleDetails(elementId) {
-  const details = document.getElementById(elementId);
-  details.classList.toggle('show-details');
-}
-
-// Function to submit the contact form
-function submitForm(event) {
-  const form = document.getElementById('contactForm');
-  const formData = new FormData(form);
-
-  // Send the form data using AJAX
-  fetch('https://formspree.io/f/mleykvjy', {
-    method: 'POST',
-    body: formData,
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.message === 'success') {
-        // Handle successful form submission
-        alert('Your message has been sent successfully!');
-      } else {
-        // Handle form submission error
-        alert('There was an error submitting your message. Please try again later.');
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      alert('An unexpected error occurred. Please try again later.');
+    // Listen for the end of the profile pic transition
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.addEventListener('transitionend', function () {
+        // Trigger the animation for profile info after the profile pic transition is complete
+        profileInfo.classList.add('info-slide-in');
     });
 
-  // Prevent the default form submission behavior
-  event.preventDefault();
+    // Trigger the animation for profile pic and info on every refresh
+    triggerSlideInAnimation();
+    profileInfo.classList.add('info-slide-in');
+};
+
+// Function to trigger slide-in animation
+function triggerSlideInAnimation() {
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.classList.add('slide-in');
 }
 
-// Add event listener for profile picture click outside window.onload
-document.addEventListener('DOMContentLoaded', function () {
-    toggleProfileInfo(); // Ensure that profile-info is visible on page load
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    // Save the theme preference to local storage
+    const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
 
-    // Function to toggle the visibility of profile-info
-    function toggleProfileInfo() {
-        var profileInfo = document.getElementById("profile-info");
-        console.log('Toggle Profile Info function called');
-        if (profileInfo) {
-            console.log('Profile Info element found:', profileInfo);
-            // Toggle the 'visible' class to control visibility
-            profileInfo.classList.toggle('visible');
-        } else {
-            console.error("Element with ID 'profile-info' not found.");
-        }
+    // Adjust image style based on theme with animation
+    adjustImageStyleWithAnimation();
+}
+
+function adjustImageStyle() {
+    const profilePic = document.getElementById('profile-pic');
+
+    // Check if the theme is dark, and adjust image style accordingly
+    if (document.body.classList.contains('dark-theme')) {
+        profilePic.style.borderColor = '#fff'; // White border for dark theme
+    } else {
+        profilePic.style.borderColor = '#333'; // Dark border for light theme
     }
-});
+}
+
+function adjustImageStyleWithAnimation() {
+    const profilePic = document.getElementById('profile-pic');
+
+    // Add a class for the transition effect
+    profilePic.classList.add('border-transition');
+
+    // Adjust image style based on theme
+    adjustImageStyle();
+
+    // Remove the class after the transition is complete
+    setTimeout(() => {
+        profilePic.classList.remove('border-transition');
+    }, 500); // Adjust the duration to match the CSS transition duration
+}
+//education details toggle
+function toggleDetails(elementId) {
+        const details = document.getElementById(elementId);
+        details.classList.toggle('show-details');
+    }
+	
+
+//submitform
+function submitForm() {
+    var form = document.getElementById("contactForm");
+    var formData = new FormData(form);
+
+    // Your existing AJAX code to handle form submission
+
+    // Prevent the default form submission
+    e.preventDefault();
+}
+
+function submitForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+
+    var formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("message", message);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://formspree.io/f/mleykvjy", true); // Update with your Formspree endpoint
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200 || xhr.status == 0) { // Status 0 is for local testing
+                // Handle the response, you can show a success message or redirect the user
+                if (xhr.responseText === "success") {
+                    console.log("Form submitted successfully!");
+                    // You can add a success message or redirect the user to a thank you page
+                } else {
+                    console.log("Error submitting form!");
+                    // Handle the error, show an error message or redirect the user to an error page
+                }
+            } else {
+                console.log("Error: " + xhr.status);
+                // Handle other HTTP status codes if needed
+            }
+        }
+    };
+
+    xhr.send(formData);
+}
 
