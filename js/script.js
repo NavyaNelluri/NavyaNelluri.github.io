@@ -15,10 +15,6 @@ function toggleProfileInfo() {
     }
 }
 
-
-
-
-
 // Function to toggle theme
 function toggleTheme() {
   document.body.classList.toggle('dark-theme');
@@ -30,7 +26,6 @@ function toggleTheme() {
   adjustImageStyleWithAnimation();
 }
 
-// Adjust image style
 // Adjust image style with animation
 function adjustImageStyleWithAnimation() {
   const profilePic = document.getElementById('profile-pic');
@@ -53,24 +48,11 @@ function adjustImageStyle() {
 
   // Check if the theme is dark, and adjust image style accordingly
   if (document.body.classList.contains('dark-theme')) {
-    if (profilePic.tagName.toLowerCase() === 'img') {
-      // For images, update the class attribute
-      profilePic.setAttribute('class', 'border-transition dark-theme');
-    } else {
-      // For other elements with classList, use classList
-      profilePic.classList.add('dark-theme');
-    }
+    profilePic.classList.add('dark-theme');
   } else {
-    if (profilePic.tagName.toLowerCase() === 'img') {
-      // For images, update the class attribute
-      profilePic.setAttribute('class', 'border-transition');
-    } else {
-      // For other elements with classList, use classList
-      profilePic.classList.remove('dark-theme');
-    }
+    profilePic.classList.remove('dark-theme');
   }
 }
-
 
 // Function to toggle education details
 function toggleDetails(elementId) {
@@ -113,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (profilePic) {
     profilePic.addEventListener('click', function () {
-      // Toggle the 'active' class on profile-info
+      // Toggle the 'visible' class on profile-info
       toggleProfileInfo();
     });
   }
@@ -128,7 +110,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Trigger the animation for profile pic on every refresh
   triggerSlideInAnimation();
-
-  // Display the initial content of profile-info
-  toggleProfileInfo(); // Add this line to make the initial content visible
 });
