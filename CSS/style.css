@@ -37,6 +37,9 @@ body.dark-theme {
     height: 450px; /* Adjust the size as needed */
     border: 3px solid #fff; /* Border color */
     border-radius: 15px; /* Adjust the border-radius to create a rounded square effect */
+	transition: border-color 0.3s ease, transform 0.3s ease; /* Transition effects for border color and size change */
+top: 30px;
+    left: 0px; 
     margin: 20px; /* Adjust the margin as needed */
     position: absolute;
 	top: 30px;
@@ -49,7 +52,7 @@ body.dark-theme {
 .profile-info1 {
     position: absolute;
     top: 20%; /* Adjust the top position */
-    left: 60%;
+    left: 40%;
     text-align: left;
     transform: translate(-70%, 100%);
     opacity: 0;
@@ -61,7 +64,6 @@ body.dark-theme {
     opacity: 1;
     transform: translate(-50%, 0);
 }
-
 
 
 #home {
@@ -88,15 +90,21 @@ body.dark-theme #profile-pic:hover {
 
 /* Animation for sliding in */
 @keyframes slideIn {
+    from {
+        transform: translateY(100%); /* Start position, off-screen at the bottom */
+
+    }
     to {
-        left: 20px;
+        transform: translateY(0); /* End position, at the top */
     }
 }
 
+#profile-info.slide-in {
+    animation: slideIn 1s forwards;
+}
 #profile-pic.slide-in {
     animation: slideIn 1s forwards;
 }
-
 .bigfont, .smallfont {
     font-family: 'Roboto', sans-serif;
 }
