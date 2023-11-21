@@ -12,7 +12,6 @@ function toggleProfileInfo() {
         console.log('Profile Info element found:', profileInfo); // Add this line for debugging
         // Toggle the 'visible' class to control visibility
         profileInfo.classList.toggle('visible');
-      console.log("hi");
     } else {
         console.error("Element with ID 'profile-info' not found.");
     }
