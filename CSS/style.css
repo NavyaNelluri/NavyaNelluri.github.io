@@ -145,7 +145,6 @@ body.dark-theme .education-entry {
     overflow: hidden; /* Hide overflow to keep details within the entry */
 
 }
-
 /* Add color to each education entry */
 .education-entry:nth-child(odd) {
     background-color: #f7f7f7; /* Light background color for odd entries */
