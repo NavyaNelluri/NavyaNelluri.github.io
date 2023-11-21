@@ -98,7 +98,7 @@ function adjustImageStyleWithAnimation() {
 // Function to show/hide content by ID
 function showContent(id) {
     var contentElement = document.getElementById(id);
-
+        console.log("function called");
     if (contentElement) {
         contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
     } else {
