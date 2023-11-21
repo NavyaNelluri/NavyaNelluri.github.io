@@ -1,3 +1,31 @@
+window.onload = function () {
+    const themeToggle = document.getElementById('toggle-theme');
+    themeToggle.addEventListener('click', toggleTheme);
+
+    // Check for saved theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+    }
+
+    // Apply slide-in animation on load
+    triggerSlideInAnimation();
+
+    // Add these lines to apply the active class and start info animation
+    const profileInfo = document.querySelector('.profile-info');
+    profileInfo.classList.add('active');
+
+    // Listen for the end of the profile pic transition
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.addEventListener('transitionend', function () {
+        // Trigger the animation for profile info after the profile pic transition is complete
+        profileInfo.classList.add('info-slide-in');
+    });
+
+    // Trigger the animation for profile pic and info on every refresh
+    triggerSlideInAnimation();
+    profileInfo.classList.add('info-slide-in');
+};
+
 // Function to trigger slide-in animation
 function triggerSlideInAnimation() {
     const profilePic = document.getElementById('profile-pic');
@@ -39,58 +67,24 @@ function adjustImageStyleWithAnimation() {
         profilePic.classList.remove('border-transition');
     }, 500); // Adjust the duration to match the CSS transition duration
 }
-
-// Function to submit form
-function submitForm(e) {
-    e.preventDefault();
-
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
-
-    var formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("message", message);
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://formspree.io/f/mleykvjy", true); // Update with your Formspree endpoint
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            if (xhr.status == 200 || xhr.status == 0) { // Status 0 is for local testing
-                // Handle the response, you can show a success message or redirect the user
-                if (xhr.responseText === "success") {
-                    console.log("Form submitted successfully!");
-                    // You can add a success message or redirect the user to a thank you page
-                } else {
-                    console.log("Error submitting form!");
-                    // Handle the error, show an error message or redirect the user to an error page
-                }
-            } else {
-                console.log("Error: " + xhr.status);
-                // Handle other HTTP status codes if needed
-            }
-        }
-    };
-
-    xhr.send(formData);
-}
-
-function showContent(id) {
-    // Get the element by ID
-    var contentElement = document.getElementById(id);
-
-    // Toggle the 'hidden' class to show/hide the content
-    if (contentElement) {
-        contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
-    } else {
-        console.error("Element not found with ID:", id);
+//education details toggle
+function toggleDetails(elementId) {
+        const details = document.getElementById(elementId);
+        details.classList.toggle('show-details');
     }
+	
+
+//submitform
+function submitForm() {
+    var form = document.getElementById("contactForm");
+    var formData = new FormData(form);
+
+    // Your existing AJAX code to handle form submission
+
+    // Prevent the default form submission
+    e.preventDefault();
 }
 
-
-// Function to submit the form
 function submitForm() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
@@ -123,4 +117,17 @@ function submitForm() {
     };
 
     xhr.send(formData);
+}
+document.addEventListener('DOMContentLoaded', function () {
+            var profilePic = document.getElementById('profile-pic');
+            var profileInfo = document.querySelector('.profile-info');
+
+            profilePic.addEventListener('click', function () {
+                profileInfo.classList.toggle('active');
+            });
+        });
+
+function showContent(id) {
+  var details = document.getElementById(id);
+  details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
 }
