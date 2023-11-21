@@ -90,13 +90,12 @@ function submitForm(event) {
 
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
-  // ... (existing code)
+    const profilePic = document.getElementById('profile-pic');
 
-  // Trigger the animation for profile pic on every refresh
-  triggerSlideInAnimation();
-
-  // Display the initial content of profile-info
-  toggleProfileInfo(); // Add this line to make the initial content visible
-
-  console.log('DOMContentLoaded event triggered'); // Add this line for debugging
+    if (profilePic) {
+        profilePic.addEventListener('click', function () {
+            // Toggle the 'visible' class on profile-info
+            toggleProfileInfo();
+        });
+    }
 });
