@@ -46,18 +46,21 @@ body.dark-theme {
     cursor: pointer; /* Add cursor pointer for interaction */
 }
 
+/* Add this style to hide profile-info initially */
 .profile-info {
     position: absolute;
-    top: 20%; /* Adjust the top position */
+    top: 20%;
     left: 60%;
     text-align: left;
     transform: translate(-50%, 100%);
     opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    visibility: hidden; /* Hide initially */
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Delay visibility */
 }
 
 .profile-info.active {
     opacity: 1;
+    visibility: visible; /* Show when active */
     transform: translate(-50%, 0);
 }
 
