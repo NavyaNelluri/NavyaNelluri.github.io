@@ -6,9 +6,10 @@ function triggerSlideInAnimation() {
 
 // Function to toggle the visibility of profile-info
 function toggleProfileInfo() {
-  const profileInfo = document.querySelector('.profile-info');
-  profileInfo.classList.toggle('active');
+    var profileInfo = document.getElementById("profile-info");
+    profileInfo.classList.toggle("visible"); // Add a CSS class to show/hide the profile-info
 }
+
 
 // Function to toggle theme
 function toggleTheme() {
