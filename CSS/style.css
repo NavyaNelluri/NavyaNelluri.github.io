@@ -78,7 +78,7 @@ body.dark-theme {
 }
 
 #profile-info.visible {
-    display: block; /* Show the profile info when the visible class is applied */
+    display: block; !important
 }
 
 
