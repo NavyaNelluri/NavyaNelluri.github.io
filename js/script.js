@@ -102,4 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Trigger the animation for profile pic on every refresh
   triggerSlideInAnimation();
+
+  // Display the initial content of profile-info
+  toggleProfileInfo(); // Add this line to make the initial content visible
 });
