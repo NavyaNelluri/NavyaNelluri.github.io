@@ -17,6 +17,7 @@ profilePic.addEventListener('click', function () {
   }, 10); // Adjust the delay if needed
 });
 
+// Remaining code remains the same
 window.onload = function () {
   const themeToggle = document.getElementById('toggle-theme');
   themeToggle.addEventListener('click', toggleTheme);
@@ -30,13 +31,7 @@ window.onload = function () {
   triggerSlideInAnimation();
 };
 
-// Function to toggle slide-in animation
-function toggleSlideInAnimation() {
-  const profilePic = document.getElementById('profile-pic');
-  profilePic.classList.add('slide-in');
-}
-
-// Toggle theme function
+// Function to toggle theme
 function toggleTheme() {
   document.body.classList.toggle('dark-theme');
   // Save the theme preference to local storage
@@ -74,8 +69,6 @@ function adjustImageStyleWithAnimation() {
     profilePic.classList.remove('border-transition');
   }, 500); // Adjust the duration to match the CSS transition duration
 }
-
-
 
 // Function to toggle education details
 function toggleDetails(elementId) {
