@@ -8,15 +8,13 @@ function triggerSlideInAnimation() {
 function toggleProfileInfo() {
     var profileInfo = document.getElementById("profile-info");
     if (profileInfo) {
-        if (profileInfo.style.display === "none" || profileInfo.style.display === "") {
-            profileInfo.style.display = "block";
-        } else {
-            profileInfo.style.display = "none";
-        }
+        // Toggle the 'visible' class to control visibility
+        profileInfo.classList.toggle('visible');
     } else {
         console.error("Element with ID 'profile-info' not found.");
     }
 }
+
 
 
 
