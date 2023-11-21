@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         const profilePicElement = document.getElementById('profile-pic');
-        const profileInfoElement = document.querySelector('profile-info');
+        const profileInfoElement = document.getElementById('profile-info');
 
         if (profilePicElement && profileInfoElement) {
             profilePicElement.addEventListener('click', function () {
