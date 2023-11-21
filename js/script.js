@@ -126,3 +126,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 profileInfo.classList.toggle('active');
             });
         });
+
+function showContent(id) {
+  var details = document.getElementById(id);
+  details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
+}
