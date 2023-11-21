@@ -42,41 +42,27 @@ body.dark-theme {
     position: absolute;
 	top: 30px;
     left: -250px; /* Initial position outside the viewport */
-    z-index: 10; /* Set a higher z-index to ensure the image appears behind other content */
+    z-index: -1; /* Set a higher z-index to ensure the image appears behind other content */
     cursor: pointer; /* Add cursor pointer for interaction */
 }
 
-
-.dark-theme #profile-pic {
-  border-color: #fff;
-}
-
-.slide-in {
-  transform: translateY(50px);
-}
-
-.border-transition {
-  transition: border-color 0.5s ease-in-out;
-}
-
-/* Changed this CSS rule to directly target the profile picture element */
-
-
-#profile-info {
+.profile-info {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 1;
-    transition: opacity 0.5s ease, visibility 0s 0.5s ease; /* Delay visibility */
+    top: 20%; /* Adjust the top position */
+    left: 60%;
+    text-align: left;
+    transform: translate(-50%, 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.profile-info.visible {
+.profile-info.active {
     opacity: 1;
-    visibility: visible;
-    transition: opacity 0.5s ease, visibility 0s ease;
+    transform: translate(-50%, 0);
 }
-
+        #profile-info {
+            display: none;
+        }
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
     position: relative;
@@ -161,6 +147,7 @@ body.dark-theme .education-entry {
     overflow: hidden; /* Hide overflow to keep details within the entry */
 
 }
+
 /* Add color to each education entry */
 .education-entry:nth-child(odd) {
     background-color: #f7f7f7; /* Light background color for odd entries */
