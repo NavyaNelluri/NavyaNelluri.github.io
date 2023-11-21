@@ -73,22 +73,7 @@ function toggleDetails(elementId) {
         details.classList.toggle('show-details');
     }
 	
-function submitForm() {
-    // Get form data
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
 
-    // You can perform further actions with the form data, such as validation or sending it to a server.
-
-    // For now, let's log the data to the console
-    console.log('Form Data:', { name, email, message });
-
-    // Optionally, you can clear the form fields after submission
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('message').value = '';
-}
 //submitform
 function submitForm() {
     var form = document.getElementById("contactForm");
