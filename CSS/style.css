@@ -73,12 +73,14 @@ body.dark-theme {
     visibility: visible; /* Hide initially */
     transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Delay visibility */
 }
-
-.profile-info.active {
-    opacity: 1;
-    visibility: visible; /* Show when active */
-    transform: translate(-50%, 0);
+#profile-info {
+    display: none; /* Initially hide the profile info */
 }
+
+#profile-info.visible {
+    display: block; /* Show the profile info when the visible class is applied */
+}
+
 
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
