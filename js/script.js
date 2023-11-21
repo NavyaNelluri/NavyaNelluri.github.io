@@ -24,10 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Trigger the animation for profile pic and info on every refresh
-    triggerSlideInAnimation();
-    profileInfo.classList.add('info-slide-in');
-
     // Additional code if needed
     window.onload = function () {
         // Additional code if needed
