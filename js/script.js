@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Apply slide-in animation on load
     const profilePic = document.getElementById('profile-pic');
-
     // Check if the profilePic element exists
     if (profilePic) {
         profilePic.classList.add('slide-in');
