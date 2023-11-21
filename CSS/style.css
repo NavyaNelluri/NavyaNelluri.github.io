@@ -62,25 +62,16 @@ body.dark-theme {
 /* Changed this CSS rule to directly target the profile picture element */
 
 
-/* Add this style to hide profile-info initially */
-.profile-info {
+.visible {
     position: absolute;
     top: 20%;
     left: 60%;
     text-align: left;
     transform: translate(-50%, 100%);
     opacity: 0;
-	color: #000; /* Set a color that contrasts with the background */
-
-    visibility: visible; /* Hide initially */
+    color: #000; /* Set a color that contrasts with the background */
+    visibility: hidden; /* Hide initially */
     transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Delay visibility */
-}
-.visible {
-    display: block !important; /* Use !important to override inline styles */
-    opacity: 1; /* Ensure opacity is set to 1 when visible */
-    visibility: visible; /* Ensure visibility is set to visible when visible */
-        transition: opacity 0.5s, visibility 0.5s; /* Add a transition for smooth visibility changes */
-
 }
 
 #profile-info {
@@ -88,6 +79,7 @@ body.dark-theme {
     transition: opacity 0.5s; /* Add a transition for opacity if needed */
     /* Add other styles as needed */
 }
+
 
 
 #home {
