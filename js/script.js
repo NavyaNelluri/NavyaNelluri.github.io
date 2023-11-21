@@ -28,6 +28,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add these lines to apply the active class and start info animation
     const profileInfo = document.querySelector('.profile-info');
 
+        function showContent(id) {
+console.log("function called");
+
+    // Get the element by ID
+    var contentElement = document.getElementById(id);
+    // Toggle the 'hidden' class to show/hide the content
+    if (contentElement) {
+        contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
+    } else {
+        console.error("Element not found with ID:", id);
+    }
+}
+
 });
 // Function to toggle theme
 function toggleTheme() {
@@ -69,18 +82,7 @@ function adjustImageStyleWithAnimation() {
     }, 500); // Adjust the duration to match the CSS transition duration
 }
 
-function showContent(id) {
-console.log("function called");
 
-    // Get the element by ID
-    var contentElement = document.getElementById(id);
-    // Toggle the 'hidden' class to show/hide the content
-    if (contentElement) {
-        contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
-    } else {
-        console.error("Element not found with ID:", id);
-    }
-}
 
 // Function to submit the form
 function submitForm() {
