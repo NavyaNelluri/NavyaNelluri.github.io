@@ -48,7 +48,7 @@ body.dark-theme {
 
 .profile-info {
     position: absolute;
-    top: 20%;
+    top: 20%; /* Adjust the top position */
     left: 60%;
     text-align: left;
     transform: translate(-50%, 100%);
@@ -59,9 +59,7 @@ body.dark-theme {
 .profile-info.active {
     opacity: 1;
     transform: translate(-50%, 0);
-    pointer-events: auto; /* Allow clicks when active */
 }
-
 
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
