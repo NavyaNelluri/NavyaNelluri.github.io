@@ -6,13 +6,13 @@ function triggerSlideInAnimation() {
 
 // Function to toggle the visibility of profile-info
 function toggleProfileInfo() {
-    var profileInfo = document.getElementById("profile-info");
-    if (profileInfo) {
-        // Toggle the 'visible' class to control visibility
-        profileInfo.classList.toggle('visible');
-    } else {
-        console.error("Element with ID 'profile-info' not found.");
-    }
+  var profileInfo = document.getElementById('profile-info');
+  if (profileInfo) {
+    // Toggle the 'visible' class to control visibility
+    profileInfo.classList.toggle('visible');
+  } else {
+    console.error("Element with ID 'profile-info' not found.");
+  }
 }
 
 // Function to toggle theme
@@ -92,7 +92,6 @@ function submitForm(event) {
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
   const profilePic = document.getElementById('profile-pic');
-  const profileInfo = document.getElementById('profile-info'); // Added this line
 
   if (profilePic) {
     profilePic.addEventListener('click', function () {
@@ -109,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.add('dark-theme');
   }
 
-  // Trigger the animation for profile pic on every refresh
+  // Trigger the animation for the profile pic on every refresh
   triggerSlideInAnimation();
   // Display the initial content of profile-info
-  profileInfo.classList.toggle('visible');
+  toggleProfileInfo();
 });
