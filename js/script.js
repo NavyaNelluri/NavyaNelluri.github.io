@@ -6,15 +6,18 @@ function triggerSlideInAnimation() {
 
 // Function to toggle the visibility of profile-info
 function toggleProfileInfo() {
-    console.log("Toggle function called");
     var profileInfo = document.getElementById("profile-info");
-    console.log("Profile info element:", profileInfo);
-    if (profileInfo.style.display === "none" || profileInfo.style.display === "") {
-        profileInfo.style.display = "block";
+    if (profileInfo) {
+        if (profileInfo.style.display === "none" || profileInfo.style.display === "") {
+            profileInfo.style.display = "block";
+        } else {
+            profileInfo.style.display = "none";
+        }
     } else {
-        profileInfo.style.display = "none";
+        console.error("Element with ID 'profile-info' not found.");
     }
 }
+
 
 // Function to toggle theme
 function toggleTheme() {
