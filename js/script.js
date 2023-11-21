@@ -7,18 +7,18 @@ window.onload = function () {
         document.body.classList.add('dark-theme');
     }
 
-    // Apply slide-in animation on load
-    triggerSlideInAnimation();
-
     // Add these lines to apply the active class
     const profileInfo = document.querySelector('.profile-info');
-    profileInfo.classList.add('active');
+    const profilePic = document.getElementById('profile-pic');
+
+    profilePic.addEventListener('click', function () {
+        profileInfo.classList.toggle('active');
+    });
 
     // Listen for the end of the profile pic transition
-    const profilePic = document.getElementById('profile-pic');
     profilePic.addEventListener('transitionend', function () {
         // Trigger the animation for profile info after the profile pic transition is complete
-        profileInfo.classList.add('info-slide-in');
+        profileInfo.classList.toggle('info-slide-in');
     });
 
     // Trigger the animation for profile pic on every refresh
