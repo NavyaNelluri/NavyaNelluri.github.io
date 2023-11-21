@@ -102,20 +102,18 @@ function submitForm(event) {
 
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
-    toggleProfileInfo(); // Ensure that profile-info is visible on page load
-
-    // Function to toggle the visibility of profile-info
-    function toggleProfileInfo() {
+    // Function to make the profile-info visible
+    function showProfileInfo() {
         var profileInfo = document.getElementById("profile-info");
-        console.log('Toggle Profile Info function called');
         if (profileInfo) {
-            console.log('Profile Info element found:', profileInfo);
-            // Toggle the 'visible' class to control visibility
-            profileInfo.classList.toggle('visible');
-        } else {
-            console.error("Element with ID 'profile-info' not found.");
+            profileInfo.style.opacity = 1;
+            profileInfo.style.visibility = "visible";
         }
     }
+
+    // Call the function to show profile-info on page load
+    showProfileInfo();
 });
+
 
 
