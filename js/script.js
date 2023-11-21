@@ -30,6 +30,12 @@ window.onload = function () {
   triggerSlideInAnimation();
 };
 
+// Function to toggle slide-in animation
+function toggleSlideInAnimation() {
+  const profilePic = document.getElementById('profile-pic');
+  profilePic.classList.add('slide-in');
+}
+
 // Toggle theme function
 function toggleTheme() {
   document.body.classList.toggle('dark-theme');
@@ -68,6 +74,8 @@ function adjustImageStyleWithAnimation() {
     profilePic.classList.remove('border-transition');
   }, 500); // Adjust the duration to match the CSS transition duration
 }
+
+
 
 // Function to toggle education details
 function toggleDetails(elementId) {
