@@ -25,6 +25,10 @@ window.onload = function () {
     triggerSlideInAnimation();
     profileInfo.classList.add('info-slide-in');
 };
+function triggerSlideInAnimation() {
+  const profilePic = document.getElementById('profile-pic');
+  profilePic.classList.add('slide-in');
+}
 
 // Function to trigger slide-in animation
 function showContent(id) {
