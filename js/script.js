@@ -6,7 +6,9 @@ function triggerSlideInAnimation() {
 
 // Function to toggle the visibility of profile-info
 function toggleProfileInfo() {
+    console.log("Toggle function called");
     var profileInfo = document.getElementById("profile-info");
+    console.log("Profile info element:", profileInfo);
     if (profileInfo.style.display === "none" || profileInfo.style.display === "") {
         profileInfo.style.display = "block";
     } else {
