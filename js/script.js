@@ -4,31 +4,11 @@ function triggerSlideInAnimation() {
   profilePic.classList.add('slide-in');
 }
 
-// Add event listener for profile picture click outside window.onload
-document.addEventListener('DOMContentLoaded', function () {
-  const profilePic = document.getElementById('profile-pic');
-  profilePic.addEventListener('click', function () {
-    // Toggle the 'active' class on profile-info
-    const profileInfo = document.querySelector('.profile-info');
-    profileInfo.classList.toggle('active');
-
-    // Toggle the 'info-slide-in' class after a short delay
-    setTimeout(function () {
-      profileInfo.classList.toggle('info-slide-in');
-    }, 10); // Adjust the delay if needed
-  });
-
-  const themeToggle = document.getElementById('toggle-theme');
-  themeToggle.addEventListener('click', toggleTheme);
-
-  // Check for saved theme preference
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-theme');
-  }
-
-  // Trigger the animation for profile pic on every refresh
-  triggerSlideInAnimation();
-});
+// Function to toggle the visibility of profile-info
+function toggleProfileInfo() {
+  const profileInfo = document.querySelector('.profile-info');
+  profileInfo.classList.toggle('active');
+}
 
 // Function to toggle theme
 function toggleTheme() {
@@ -41,7 +21,7 @@ function toggleTheme() {
   adjustImageStyleWithAnimation();
 }
 
-// Adjust image style based on theme
+// Adjust image style
 function adjustImageStyle() {
   const profilePic = document.getElementById('profile-pic');
 
@@ -103,3 +83,23 @@ function submitForm(event) {
   // Prevent the default form submission behavior
   event.preventDefault();
 }
+
+// Add event listener for profile picture click outside window.onload
+document.addEventListener('DOMContentLoaded', function () {
+  const profilePic = document.getElementById('profile-pic');
+  profilePic.addEventListener('click', function () {
+    // Toggle the 'active' class on profile-info
+    toggleProfileInfo();
+  });
+
+  const themeToggle = document.getElementById('toggle-theme');
+  themeToggle.addEventListener('click', toggleTheme);
+
+  // Check for saved theme preference
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+  }
+
+  // Trigger the animation for profile pic on every refresh
+  triggerSlideInAnimation();
+});
