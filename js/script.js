@@ -82,15 +82,7 @@ function toggleDetails(elementId) {
 	
 
 //submitform
-function submitForm() {
-    var form = document.getElementById("contactForm");
-    var formData = new FormData(form);
 
-    // Your existing AJAX code to handle form submission
-
-    // Prevent the default form submission
-    e.preventDefault();
-}
 
 function submitForm() {
     var name = document.getElementById("name").value;
