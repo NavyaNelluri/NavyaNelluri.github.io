@@ -67,8 +67,7 @@ body.dark-theme {
     top: 20%;
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Center horizontally */
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
     transition: opacity 0.5s ease, visibility 0s 0.5s ease; /* Delay visibility */
 }
 
