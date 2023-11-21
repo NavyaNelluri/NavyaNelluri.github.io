@@ -27,10 +27,17 @@ window.onload = function () {
 };
 
 // Function to trigger slide-in animation
-function triggerSlideInAnimation() {
-    const profilePic = document.getElementById('profile-pic');
-    profilePic.classList.add('slide-in');
-}
+function showContent(id) {
+    // Get the element by ID
+    var contentElement = document.getElementById(id);
+
+    // Toggle the 'hidden' class to show/hide the content
+    if (contentElement) {
+      contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
+    } else {
+      console.error("Element not found with ID:", id);
+    }
+  }
 
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
