@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 profileInfo.classList.toggle('active');
             });
         });
-        function showContent() {
+        function showContent(id) {
 console.log("function called");
 
     // Get the element by ID
