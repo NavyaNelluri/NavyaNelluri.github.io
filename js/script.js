@@ -94,14 +94,15 @@ function submitForm(event) {
 
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
-    const profilePic = document.getElementById('profile-pic');
+  const profilePic = document.getElementById('profile-pic');
 
-    if (profilePic) {
-        profilePic.addEventListener('click', function () {
-            // Toggle the 'active' class on profile-info
-            toggleProfileInfo();
-        });
-    }
+  if (profilePic) {
+    profilePic.addEventListener('click', function () {
+      // Toggle the visibility of profile-info
+      toggleProfileInfo();
+    });
+  }
+
   const themeToggle = document.getElementById('toggle-theme');
   themeToggle.addEventListener('click', toggleTheme);
 
@@ -113,5 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Trigger the animation for profile pic on every refresh
   triggerSlideInAnimation();
   // Display the initial content of profile-info
-  profileInfo.classList.toggle('visible');
+  toggleProfileInfo();
 });
+
