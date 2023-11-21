@@ -94,16 +94,14 @@ function submitForm(event) {
 
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
-  const profilePic = document.getElementById('profile-pic');
-  const profileInfo = document.getElementById('profile-info'); // Added this line
+    const profilePic = document.getElementById('profile-pic');
 
-  if (profilePic) {
-    profilePic.addEventListener('click', function () {
-      // Toggle the 'visible' class on profile-info
-      toggleProfileInfo();
-    });
-  }
-
+    if (profilePic) {
+        profilePic.addEventListener('click', function () {
+            // Toggle the 'active' class on profile-info
+            toggleProfileInfo();
+        });
+    }
   const themeToggle = document.getElementById('toggle-theme');
   themeToggle.addEventListener('click', toggleTheme);
 
