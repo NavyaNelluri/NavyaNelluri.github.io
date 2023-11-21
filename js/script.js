@@ -11,13 +11,19 @@ window.onload = function () {
     const profilePic = document.getElementById('profile-pic');
 
     profilePic.addEventListener('click', function () {
-        profileInfo.classList.toggle('info-slide-in');
+        // Toggle the 'active' class on profile-info
         profileInfo.classList.toggle('active');
+
+        // Wait for a short time, then toggle the 'info-slide-in' class
+        setTimeout(function () {
+            profileInfo.classList.toggle('info-slide-in');
+        }, 10); // Adjust the delay if needed
     });
 
     // Trigger the animation for profile pic on every refresh
     triggerSlideInAnimation();
 };
+
 
 
 // Function to trigger slide-in animation
