@@ -1,3 +1,4 @@
+
 function toggleDetails(elementId) {
         const details = document.getElementById(elementId);
         details.classList.toggle('show-details');
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 document.addEventListener('DOMContentLoaded', function () {
             var profilePic = document.getElementById('profile-pic');
-            var profileInfo = document.querySelector('.profile-info');
+            var profileInfo = document.querySelector('.profile-info1');
 
             profilePic.addEventListener('click', function () {
                 profileInfo.classList.toggle('active');
