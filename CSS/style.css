@@ -38,10 +38,8 @@ body.dark-theme {
     border: 3px solid #fff; /* Border color */
     border-radius: 15px; /* Adjust the border-radius to create a rounded square effect */
     margin: 20px; /* Adjust the margin as needed */
-    transition: border-color 0.3s ease, transform 0.3s ease; /* Transition effects for border color and size change */
     position: absolute;
 	top: 30px;
-    left: -250px; /* Initial position outside the viewport */
     z-index: -1; /* Set a higher z-index to ensure the image appears behind other content */
     cursor: pointer; /* Add cursor pointer for interaction */
 }
