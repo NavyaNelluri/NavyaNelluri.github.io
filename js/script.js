@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-theme');
     }
-
     // Apply slide-in animation on load
     const profilePic = document.getElementById('profile-pic');
     // Check if the profilePic element exists
