@@ -92,6 +92,7 @@ function submitForm(event) {
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
   const profilePic = document.getElementById('profile-pic');
+  const profileInfo = document.getElementById('profile-info'); // Added this line
 
   if (profilePic) {
     profilePic.addEventListener('click', function () {
@@ -110,4 +111,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Trigger the animation for profile pic on every refresh
   triggerSlideInAnimation();
+  // Display the initial content of profile-info
+  profileInfo.classList.toggle('visible');
 });
