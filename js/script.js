@@ -10,7 +10,7 @@ window.onload = function () {
     // Apply slide-in animation on load
     triggerSlideInAnimation();
 
-    // Add these lines to apply the active class and start info animation
+    // Add these lines to apply the active class
     const profileInfo = document.querySelector('.profile-info');
     profileInfo.classList.add('active');
 
@@ -21,9 +21,8 @@ window.onload = function () {
         profileInfo.classList.add('info-slide-in');
     });
 
-    // Trigger the animation for profile pic and info on every refresh
+    // Trigger the animation for profile pic on every refresh
     triggerSlideInAnimation();
-    profileInfo.classList.add('info-slide-in');
 };
 
 // Function to trigger slide-in animation
@@ -31,6 +30,7 @@ function triggerSlideInAnimation() {
     const profilePic = document.getElementById('profile-pic');
     profilePic.classList.add('slide-in');
 }
+
 
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
