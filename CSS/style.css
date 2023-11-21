@@ -40,7 +40,8 @@ body.dark-theme {
     margin: 20px; /* Adjust the margin as needed */
     position: absolute;
 	top: 30px;
-    z-index: -1; /* Set a higher z-index to ensure the image appears behind other content */
+   /* z-index: -1; */
+	/* Set a higher z-index to ensure the image appears behind other content */
     cursor: pointer; /* Add cursor pointer for interaction */
 }
 
@@ -259,6 +260,11 @@ body.dark-theme .work-entry {
         padding: 20px 10px;
     }
 }
+
+#home, #education, #work, #contact {
+    pointer-events: auto;
+}
+
 
 
 /* Contact Page */
