@@ -8,15 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Apply slide-in animation on load
-    triggerSlideInAnimation();
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.classList.add('slide-in');
 
     // Add these lines to apply the active class and start info animation
     const profileInfo = document.querySelector('.profile-info');
-    profileInfo.classList.add('active');
+    profileInfo.classList.add('active', 'info-slide-in');
 
     // Listen for the end of the profile pic transition
-    const profilePic = document.getElementById('profile-pic');
-
     if (profilePic) {
         profilePic.addEventListener('transitionend', function () {
             // Trigger the animation for profile info after the profile pic transition is complete
@@ -38,18 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-// Function to trigger slide-in animation
-function triggerSlideInAnimation() {
-    const profilePic = document.getElementById('profile-pic');
-
-    // Check if the profilePic element exists
-    if (profilePic) {
-        profilePic.classList.add('slide-in');
-    } else {
-        console.error("Element with id 'profile-pic' not found.");
-    }
-}
 
 // Function to toggle theme
 function toggleTheme() {
