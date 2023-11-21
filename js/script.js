@@ -118,4 +118,11 @@ function submitForm() {
 
     xhr.send(formData);
 }
+document.addEventListener('DOMContentLoaded', function () {
+            var profilePic = document.getElementById('profile-pic');
+            var profileInfo = document.querySelector('.profile-info');
 
+            profilePic.addEventListener('click', function () {
+                profileInfo.classList.toggle('active');
+            });
+        });
