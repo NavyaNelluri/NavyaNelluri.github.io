@@ -50,6 +50,8 @@ function triggerSlideInAnimation() {
     // Check if the profilePic element exists
     if (profilePic) {
         profilePic.classList.add('slide-in');
+    } else {
+        console.error("Element with id 'profile-pic' not found.");
     }
 }
 
