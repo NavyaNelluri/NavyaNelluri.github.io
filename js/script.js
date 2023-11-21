@@ -28,32 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add these lines to apply the active class and start info animation
     const profileInfo = document.querySelector('.profile-info');
 
-    // Check if the profileInfo element exists
-    if (profileInfo) {
-        profileInfo.classList.add('active', 'info-slide-in');
-
-        // Listen for the end of the profile pic transition
-        profilePic.addEventListener('transitionend', function () {
-            // Trigger the animation for profile info after the profile pic transition is complete
-            profileInfo.classList.add('info-slide-in');
-        });
-
-        // Additional code if needed
-        window.onload = function () {
-            // Additional code if needed
-        };
-
-        const profilePicElement = document.getElementById('profile-pic');
-        const profileInfoElement = document.querySelector('profile-info1');
-
-        if (profilePicElement && profileInfoElement) {
-            profilePicElement.addEventListener('click', function () {
-                profileInfoElement.classList.toggle('active');
-            });
-        }
-    } else {
-        console.error("Element with class 'profile-info' not found.");
-    }
 });
 // Function to toggle theme
 function toggleTheme() {
