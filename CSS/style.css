@@ -40,7 +40,7 @@ body.dark-theme {
     margin: 20px; /* Adjust the margin as needed */
     position: absolute;
 	top: 30px;
-    z-index: -1; 
+   /* z-index: -1; */
 	/* Set a higher z-index to ensure the image appears behind other content */
     cursor: pointer; /* Add cursor pointer for interaction */
 }
