@@ -102,28 +102,20 @@ function submitForm(event) {
 
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
-    const profilePic = document.getElementById('profile-pic');
-    const profileInfo = document.getElementById('profile-info'); // Add this line
+    toggleProfileInfo(); // Ensure that profile-info is visible on page load
 
-    if (profilePic && profileInfo) {
-        profilePic.addEventListener('click', function () {
-            // Toggle the 'active' class on profile-info
-            toggleProfileInfo(profileInfo); // Pass profileInfo to the function
-        });
+    // Function to toggle the visibility of profile-info
+    function toggleProfileInfo() {
+        var profileInfo = document.getElementById("profile-info");
+        console.log('Toggle Profile Info function called');
+        if (profileInfo) {
+            console.log('Profile Info element found:', profileInfo);
+            // Toggle the 'visible' class to control visibility
+            profileInfo.classList.toggle('visible');
+        } else {
+            console.error("Element with ID 'profile-info' not found.");
+        }
     }
-
-    const themeToggle = document.getElementById('toggle-theme');
-    themeToggle.addEventListener('click', toggleTheme);
-
-    // Check for saved theme preference
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark-theme');
-    }
-
-    // Trigger the animation for the profile pic on every refresh
-    triggerSlideInAnimation();
-
-    // Display the initial content of profile-info
-    toggleProfileInfo(profileInfo); // Pass profileInfo to the function
 });
+
 
