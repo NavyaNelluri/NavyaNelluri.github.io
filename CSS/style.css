@@ -79,7 +79,11 @@ body.dark-theme {
     transition: opacity 0.5s; /* Add a transition for opacity if needed */
     /* Add other styles as needed */
 }
-
+.profile-info.visible {
+    opacity: 1; /* Ensure opacity is set to 1 when visible */
+    visibility: visible; /* Ensure visibility is set to visible when visible */
+    transition: opacity 0.5s, visibility 0.5s; /* Add a transition for smooth visibility changes */
+}
 
 
 #home {
