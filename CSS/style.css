@@ -43,6 +43,9 @@ body.dark-theme {
     z-index: -1; /* Set a higher z-index to ensure the image appears behind other content */
     cursor: pointer; /* Add cursor pointer for interaction */
 }
+#profile-info {
+    display: none;
+}
 
 .profile-info {
     position: absolute;
