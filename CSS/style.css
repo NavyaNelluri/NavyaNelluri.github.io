@@ -73,12 +73,16 @@ body.dark-theme {
     visibility: visible; /* Hide initially */
     transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Delay visibility */
 }
-#profile-info {
-    display: none; /* Initially hide the profile info */
+.visible {
+    display: block !important; /* Use !important to override inline styles */
+    opacity: 1; /* Ensure opacity is set to 1 when visible */
+    visibility: visible; /* Ensure visibility is set to visible when visible */
 }
 
-#profile-info.visible {
-    display: block; !important
+#profile-info {
+    display: none; /* Hide by default */
+    transition: opacity 0.5s; /* Add a transition for opacity if needed */
+    /* Add other styles as needed */
 }
 
 
