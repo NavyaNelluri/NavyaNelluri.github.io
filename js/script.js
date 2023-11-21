@@ -15,14 +15,6 @@ window.onload = function () {
         profileInfo.classList.toggle('active');
     });
 
-    // Listen for the end of the profile pic transition
-    profilePic.addEventListener('transitionend', function () {
-        // Trigger the animation for profile info after the profile pic transition is complete
-        if (profileInfo.classList.contains('active')) {
-            profileInfo.classList.add('info-slide-in');
-        }
-    });
-
     // Trigger the animation for profile pic on every refresh
     triggerSlideInAnimation();
 };
