@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.add('dark-theme');
     }
 
+    
     // Apply slide-in animation on load
     const profilePic = document.getElementById('profile-pic');
     profilePic.classList.add('slide-in');
