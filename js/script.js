@@ -62,6 +62,10 @@ function toggleTheme() {
     // Adjust image style based on theme with animation
     adjustImageStyleWithAnimation();
 }
+function toggleDetails(elementId) {
+        const details = document.getElementById(elementId);
+        details.classList.toggle('show-details');
+    }
 
 // Function to adjust image style
 function adjustImageStyle() {
