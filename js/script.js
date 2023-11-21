@@ -28,11 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Add these lines to apply the active class and start info animation
     const profileInfo = document.querySelector('.profile-info');
 
+
+});
+
         function showContent(id) {
 console.log("function called");
 
     // Get the element by ID
-    var contentElement = document.getElementById(id);
+    var contentElement = document.getElementById('profile-info');
     // Toggle the 'hidden' class to show/hide the content
     if (contentElement) {
         contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
@@ -41,7 +44,6 @@ console.log("function called");
     }
 }
 
-});
 // Function to toggle theme
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
