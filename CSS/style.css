@@ -50,14 +50,9 @@ body.dark-theme {
     top: 20%; /* Adjust the top position */
     left: 60%;
     text-align: left;
-    transform: translate(-50%, -50%);
-    opacity: 0;
+    opacity: 1;
 }
 
-.profile-info.active {
-    opacity: 1;
-    transform: translate(-50%, 0);
-}
 
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
