@@ -11,12 +11,12 @@ window.onload = function () {
     const profilePic = document.getElementById('profile-pic');
 
     profilePic.addEventListener('click', function () {
-        // Toggle the 'active' class on profile-info
-        profileInfo.classList.toggle('active');
+        // Toggle the 'info-slide-in' class
+        profileInfo.classList.toggle('info-slide-in');
 
-        // Toggle the 'info-slide-in' class after a short delay
+        // Wait for a short time, then toggle the 'active' class
         setTimeout(function () {
-            profileInfo.classList.toggle('info-slide-in');
+            profileInfo.classList.toggle('active');
         }, 10); // Adjust the delay if needed
     });
 
@@ -24,7 +24,46 @@ window.onload = function () {
     triggerSlideInAnimation();
 };
 
+// Function to trigger slide-in animation
+function triggerSlideInAnimation() {
+    const profilePic = document.getElementById('profile-pic');
+    profilePic.classList.add('slide-in');
+}
 
+function toggleTheme() {
+    document.body.classList.toggle('dark-theme');
+    // Save the theme preference to local storage
+    const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+    localStorage.setItem('theme', theme);
+
+    // Adjust image style based on theme with animation
+    adjustImageStyleWithAnimation();
+}
+
+function adjustImageStyle() {
+    const profilePic = document.getElementById('profile-pic');
+    // Check if the theme is dark, and adjust image style accordingly
+    if (document.body.classList.contains('dark-theme')) {
+        profilePic.style.borderColor = '#fff'; // White border for dark theme
+    } else {
+        profilePic.style.borderColor = '#333'; // Dark border for light theme
+    }
+}
+
+function adjustImageStyleWithAnimation() {
+    const profilePic = document.getElementById('profile-pic');
+    // Add a class for the transition effect
+    profilePic.classList.add('border-transition');
+    // Adjust image style based on theme
+    adjustImageStyle();
+    // Remove the class after the transition is complete
+    setTimeout(() => {
+        profilePic.classList.remove('border-transition');
+    }, 500); // Adjust the duration to match the CSS transition duration
+}
+
+
+//---
 
 
 // Function to trigger slide-in animation
