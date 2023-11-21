@@ -7,35 +7,44 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.add('dark-theme');
     }
 
-    
     // Apply slide-in animation on load
     const profilePic = document.getElementById('profile-pic');
-    profilePic.classList.add('slide-in');
+
+    // Check if the profilePic element exists
+    if (profilePic) {
+        profilePic.classList.add('slide-in');
+    } else {
+        console.error("Element with id 'profile-pic' not found.");
+    }
 
     // Add these lines to apply the active class and start info animation
     const profileInfo = document.querySelector('.profile-info');
-    profileInfo.classList.add('active', 'info-slide-in');
 
-    // Listen for the end of the profile pic transition
-    if (profilePic) {
+    // Check if the profileInfo element exists
+    if (profileInfo) {
+        profileInfo.classList.add('active', 'info-slide-in');
+
+        // Listen for the end of the profile pic transition
         profilePic.addEventListener('transitionend', function () {
             // Trigger the animation for profile info after the profile pic transition is complete
             profileInfo.classList.add('info-slide-in');
         });
-    }
 
-    // Additional code if needed
-    window.onload = function () {
         // Additional code if needed
-    };
+        window.onload = function () {
+            // Additional code if needed
+        };
 
-    const profilePicElement = document.getElementById('profile-pic');
-    const profileInfoElement = document.querySelector('.profile-info');
+        const profilePicElement = document.getElementById('profile-pic');
+        const profileInfoElement = document.querySelector('.profile-info');
 
-    if (profilePicElement && profileInfoElement) {
-        profilePicElement.addEventListener('click', function () {
-            profileInfoElement.classList.toggle('active');
-        });
+        if (profilePicElement && profileInfoElement) {
+            profilePicElement.addEventListener('click', function () {
+                profileInfoElement.classList.toggle('active');
+            });
+        }
+    } else {
+        console.error("Element with class 'profile-info' not found.");
     }
 });
 
