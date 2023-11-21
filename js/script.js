@@ -46,7 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
 // Function to trigger slide-in animation
 function triggerSlideInAnimation() {
     const profilePic = document.getElementById('profile-pic');
-    profilePic.classList.add('slide-in');
+
+    // Check if the profilePic element exists
+    if (profilePic) {
+        profilePic.classList.add('slide-in');
+    }
 }
 
 // Function to toggle theme
