@@ -11,13 +11,7 @@ window.onload = function () {
     const profilePic = document.getElementById('profile-pic');
 
     profilePic.addEventListener('click', function () {
-        // Toggle the 'info-slide-in' class
-        profileInfo.classList.toggle('info-slide-in');
-
-        // Wait for a short time, then toggle the 'active' class
-        setTimeout(function () {
-            profileInfo.classList.toggle('active');
-        }, 10); // Adjust the delay if needed
+        profileInfo.classList.toggle('active');
     });
 
     // Trigger the animation for profile pic on every refresh
