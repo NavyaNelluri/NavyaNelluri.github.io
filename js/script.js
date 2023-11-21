@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('toggle-theme');
-    themeToggle.addEventListener('click', toggleTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    } else {
+        console.error("Element with id 'toggle-theme' not found.");
+    }
 
     // Check for saved theme preference
     if (localStorage.getItem('theme') === 'dark') {
@@ -47,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error("Element with class 'profile-info' not found.");
     }
 });
-
 // Function to toggle theme
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
