@@ -5,13 +5,20 @@ function triggerSlideInAnimation() {
 }
 
 // Function to toggle the visibility of profile-info
+// Function to toggle the visibility of profile-info
 function toggleProfileInfo() {
     var profileInfo = document.getElementById("profile-info");
-    console.log('Toggle Profile Info function called'); // Add this line for debugging
+    console.log('Toggle Profile Info function called');
     if (profileInfo) {
-        console.log('Profile Info element found:', profileInfo); // Add this line for debugging
+        console.log('Profile Info element found:', profileInfo);
         // Toggle the 'visible' class to control visibility
         profileInfo.classList.toggle('visible');
+
+        // Add a delay to ensure the class is toggled before the transition
+        setTimeout(() => {
+            // Toggle the 'show' class for smooth transition
+            profileInfo.classList.toggle('show');
+        }, 10);
     } else {
         console.error("Element with ID 'profile-info' not found.");
     }
