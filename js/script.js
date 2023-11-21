@@ -14,8 +14,6 @@ function toggleProfileInfo() {
     }
 }
 
-
-
 // Function to toggle theme
 function toggleTheme() {
   document.body.classList.toggle('dark-theme');
@@ -93,10 +91,13 @@ function submitForm(event) {
 // Add event listener for profile picture click outside window.onload
 document.addEventListener('DOMContentLoaded', function () {
   const profilePic = document.getElementById('profile-pic');
-  profilePic.addEventListener('click', function () {
-    // Toggle the 'active' class on profile-info
-    toggleProfileInfo();
-  });
+
+  if (profilePic) {
+    profilePic.addEventListener('click', function () {
+      // Toggle the 'active' class on profile-info
+      toggleProfileInfo();
+    });
+  }
 
   const themeToggle = document.getElementById('toggle-theme');
   themeToggle.addEventListener('click', toggleTheme);
