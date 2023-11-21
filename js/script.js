@@ -70,9 +70,10 @@ function adjustImageStyleWithAnimation() {
 }
 
 function showContent(id) {
+console.log("function called");
+
     // Get the element by ID
     var contentElement = document.getElementById(id);
-    console.log("function called");
     // Toggle the 'hidden' class to show/hide the content
     if (contentElement) {
         contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
