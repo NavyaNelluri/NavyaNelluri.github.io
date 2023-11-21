@@ -7,13 +7,16 @@ function triggerSlideInAnimation() {
 // Function to toggle the visibility of profile-info
 function toggleProfileInfo() {
     var profileInfo = document.getElementById("profile-info");
+    console.log('Toggle Profile Info function called'); // Add this line for debugging
     if (profileInfo) {
+        console.log('Profile Info element found:', profileInfo); // Add this line for debugging
         // Toggle the 'visible' class to control visibility
         profileInfo.classList.toggle('visible');
     } else {
         console.error("Element with ID 'profile-info' not found.");
     }
 }
+
 
 // Function to toggle theme
 function toggleTheme() {
