@@ -31,17 +31,6 @@ function toggleTheme() {
 }
 
 // Adjust image style
-function adjustImageStyle() {
-  const profilePic = document.getElementById('profile-pic');
-
-  // Check if the theme is dark, and adjust image style accordingly
-  if (document.body.classList.contains('dark-theme')) {
-    profilePic.style.borderColor = '#fff'; // White border for dark theme
-  } else {
-    profilePic.style.borderColor = '#333'; // Dark border for light theme
-  }
-}
-
 // Adjust image style with animation
 function adjustImageStyleWithAnimation() {
   const profilePic = document.getElementById('profile-pic');
@@ -57,6 +46,31 @@ function adjustImageStyleWithAnimation() {
     profilePic.classList.remove('border-transition');
   }, 500); // Adjust the duration to match the CSS transition duration
 }
+
+// Adjust image style
+function adjustImageStyle() {
+  const profilePic = document.getElementById('profile-pic');
+
+  // Check if the theme is dark, and adjust image style accordingly
+  if (document.body.classList.contains('dark-theme')) {
+    if (profilePic.tagName.toLowerCase() === 'img') {
+      // For images, update the class attribute
+      profilePic.setAttribute('class', 'border-transition dark-theme');
+    } else {
+      // For other elements with classList, use classList
+      profilePic.classList.add('dark-theme');
+    }
+  } else {
+    if (profilePic.tagName.toLowerCase() === 'img') {
+      // For images, update the class attribute
+      profilePic.setAttribute('class', 'border-transition');
+    } else {
+      // For other elements with classList, use classList
+      profilePic.classList.remove('dark-theme');
+    }
+  }
+}
+
 
 // Function to toggle education details
 function toggleDetails(elementId) {
