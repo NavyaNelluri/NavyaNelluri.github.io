@@ -1,37 +1,63 @@
-window.onload = function () {
+
+function toggleDetails(elementId) {
+        const details = document.getElementById(elementId);
+        details.classList.toggle('show-details');
+    }
+
+document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('toggle-theme');
-    themeToggle.addEventListener('click', toggleTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    } else {
+        console.error("Element with id 'toggle-theme' not found.");
+    }
 
     // Check for saved theme preference
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-theme');
     }
-
     // Apply slide-in animation on load
-    triggerSlideInAnimation();
+    const profilePic = document.getElementById('profile-pic');
+    // Check if the profilePic element exists
+    if (profilePic) {
+        profilePic.classList.add('slide-in');
+    } else {
+        console.error("Element with id 'profile-pic' not found.");
+    }
 
     // Add these lines to apply the active class and start info animation
     const profileInfo = document.querySelector('.profile-info');
-    profileInfo.classList.add('active');
 
-    // Listen for the end of the profile pic transition
-    const profilePic = document.getElementById('profile-pic');
-    profilePic.addEventListener('transitionend', function () {
-        // Trigger the animation for profile info after the profile pic transition is complete
-        profileInfo.classList.add('info-slide-in');
-    });
 
-    // Trigger the animation for profile pic and info on every refresh
-    triggerSlideInAnimation();
-    profileInfo.classList.add('info-slide-in');
-};
+});
+document.addEventListener('DOMContentLoaded', function () {
+            var profilePic = document.getElementById('profile-pic');
+            var profileInfo = document.getElementById('profile-info');
 
-// Function to trigger slide-in animation
-function triggerSlideInAnimation() {
-    const profilePic = document.getElementById('profile-pic');
-    profilePic.classList.add('slide-in');
+            profilePic.addEventListener('click', function () {
+				if (!profileInfo.classList.contains('slide-in')) {
+				profileInfo.classList.add('slide-in');}
+                profileInfo.classList.toggle('active');
+            });
+        });
+
+
+
+        function showContent(id) {
+console.log("function called");
+
+    // Get the element by ID
+    var contentElement = document.getElementById('profile-info');
+    // Toggle the 'hidden' class to show/hide the content
+    if (contentElement) {
+        contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
+    } else {
+        console.error("Element not found with ID:", id);
+    }
 }
 
+// Function to toggle theme
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
     // Save the theme preference to local storage
@@ -42,6 +68,8 @@ function toggleTheme() {
     adjustImageStyleWithAnimation();
 }
 
+
+// Function to adjust image style
 function adjustImageStyle() {
     const profilePic = document.getElementById('profile-pic');
 
@@ -53,6 +81,7 @@ function adjustImageStyle() {
     }
 }
 
+// Function to adjust image style with animation
 function adjustImageStyleWithAnimation() {
     const profilePic = document.getElementById('profile-pic');
 
@@ -67,24 +96,10 @@ function adjustImageStyleWithAnimation() {
         profilePic.classList.remove('border-transition');
     }, 500); // Adjust the duration to match the CSS transition duration
 }
-//education details toggle
-function toggleDetails(elementId) {
-        const details = document.getElementById(elementId);
-        details.classList.toggle('show-details');
-    }
-	
 
-//submitform
-function submitForm() {
-    var form = document.getElementById("contactForm");
-    var formData = new FormData(form);
 
-    // Your existing AJAX code to handle form submission
 
-    // Prevent the default form submission
-    e.preventDefault();
-}
-
+// Function to submit the form
 function submitForm() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
@@ -117,17 +132,4 @@ function submitForm() {
     };
 
     xhr.send(formData);
-}
-document.addEventListener('DOMContentLoaded', function () {
-            var profilePic = document.getElementById('profile-pic');
-            var profileInfo = document.querySelector('.profile-info');
-
-            profilePic.addEventListener('click', function () {
-                profileInfo.classList.toggle('active');
-            });
-        });
-
-function showContent(id) {
-  var details = document.getElementById(id);
-  details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
 }
