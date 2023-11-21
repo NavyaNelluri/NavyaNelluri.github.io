@@ -3,8 +3,6 @@ function toggleDetails(elementId) {
         details.classList.toggle('show-details');
     }
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('toggle-theme');
 
