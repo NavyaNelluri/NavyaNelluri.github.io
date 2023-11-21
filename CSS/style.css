@@ -65,8 +65,8 @@ body.dark-theme {
 #profile-info {
     position: absolute;
     top: 20%;
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Center horizontally */
+    left: 50%;
+    transform: translateX(-50%);
     opacity: 1;
     transition: opacity 0.5s ease, visibility 0s 0.5s ease; /* Delay visibility */
 }
@@ -76,7 +76,6 @@ body.dark-theme {
     visibility: visible;
     transition: opacity 0.5s ease, visibility 0s ease;
 }
-
 
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
