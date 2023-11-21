@@ -4,7 +4,7 @@ function triggerSlideInAnimation() {
   profilePic.classList.add('slide-in');
 }
 
-// Add event listener for profile picture click
+// Add event listener for profile picture click outside window.onload
 const profilePic = document.getElementById('profile-pic');
 profilePic.addEventListener('click', function () {
   // Toggle the 'active' class on profile-info
@@ -75,6 +75,7 @@ function toggleDetails(elementId) {
   const details = document.getElementById(elementId);
   details.classList.toggle('show-details');
 }
+
 
 // Function to submit the contact form
 function submitForm() {
