@@ -14,7 +14,7 @@ window.onload = function () {
         // Toggle the 'active' class on profile-info
         profileInfo.classList.toggle('active');
 
-        // Wait for a short time, then toggle the 'info-slide-in' class
+        // Toggle the 'info-slide-in' class after a short delay
         setTimeout(function () {
             profileInfo.classList.toggle('info-slide-in');
         }, 10); // Adjust the delay if needed
@@ -23,6 +23,7 @@ window.onload = function () {
     // Trigger the animation for profile pic on every refresh
     triggerSlideInAnimation();
 };
+
 
 
 
