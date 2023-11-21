@@ -4,19 +4,20 @@ function triggerSlideInAnimation() {
   profilePic.classList.add('slide-in');
 }
 
-// Modify the event listener for profile picture click
-const profilePic = document.getElementById('profile-pic');
-profilePic.addEventListener('click', function () {
-  // Toggle the 'info-slide-in' class after a short delay
-  setTimeout(function () {
+// Add event listener for profile picture click outside window.onload
+document.addEventListener('DOMContentLoaded', function () {
+  const profilePic = document.getElementById('profile-pic');
+  profilePic.addEventListener('click', function () {
     // Toggle the 'active' class on profile-info
     const profileInfo = document.querySelector('.profile-info');
     profileInfo.classList.toggle('active');
-  }, 10); // Adjust the delay if needed
-});
 
-// Remaining code remains the same
-window.onload = function () {
+    // Toggle the 'info-slide-in' class after a short delay
+    setTimeout(function () {
+      profileInfo.classList.toggle('info-slide-in');
+    }, 10); // Adjust the delay if needed
+  });
+
   const themeToggle = document.getElementById('toggle-theme');
   themeToggle.addEventListener('click', toggleTheme);
 
@@ -27,7 +28,7 @@ window.onload = function () {
 
   // Trigger the animation for profile pic on every refresh
   triggerSlideInAnimation();
-};
+});
 
 // Function to toggle theme
 function toggleTheme() {
@@ -75,7 +76,7 @@ function toggleDetails(elementId) {
 }
 
 // Function to submit the contact form
-function submitForm() {
+function submitForm(event) {
   const form = document.getElementById('contactForm');
   const formData = new FormData(form);
 
