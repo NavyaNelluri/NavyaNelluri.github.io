@@ -4,16 +4,14 @@ function triggerSlideInAnimation() {
   profilePic.classList.add('slide-in');
 }
 
-// Add event listener for profile picture click outside window.onload
+// Modify the event listener for profile picture click
 const profilePic = document.getElementById('profile-pic');
 profilePic.addEventListener('click', function () {
-  // Toggle the 'active' class on profile-info
-  const profileInfo = document.querySelector('.profile-info');
-  profileInfo.classList.toggle('active');
-
   // Toggle the 'info-slide-in' class after a short delay
   setTimeout(function () {
-    profileInfo.classList.toggle('info-slide-in');
+    // Toggle the 'active' class on profile-info
+    const profileInfo = document.querySelector('.profile-info');
+    profileInfo.classList.toggle('active');
   }, 10); // Adjust the delay if needed
 });
 
@@ -75,7 +73,6 @@ function toggleDetails(elementId) {
   const details = document.getElementById(elementId);
   details.classList.toggle('show-details');
 }
-
 
 // Function to submit the contact form
 function submitForm() {
