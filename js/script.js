@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('toggle-theme');
     themeToggle.addEventListener('click', toggleTheme);
 
@@ -16,22 +16,46 @@ window.onload = function () {
 
     // Listen for the end of the profile pic transition
     const profilePic = document.getElementById('profile-pic');
-    profilePic.addEventListener('transitionend', function () {
-        // Trigger the animation for profile info after the profile pic transition is complete
-        profileInfo.classList.add('info-slide-in');
-    });
+
+    if (profilePic) {
+        profilePic.addEventListener('transitionend', function () {
+            // Trigger the animation for profile info after the profile pic transition is complete
+            profileInfo.classList.add('info-slide-in');
+        });
+    }
 
     // Trigger the animation for profile pic and info on every refresh
     triggerSlideInAnimation();
     profileInfo.classList.add('info-slide-in');
-};
+
+    // Additional code if needed
+    window.onload = function () {
+        // Additional code if needed
+    };
+
+    const profilePicElement = document.getElementById('profile-pic');
+    const profileInfoElement = document.querySelector('.profile-info');
+
+    if (profilePicElement && profileInfoElement) {
+        profilePicElement.addEventListener('click', function () {
+            profileInfoElement.classList.toggle('active');
+        });
+    }
+});
 
 // Function to trigger slide-in animation
 function triggerSlideInAnimation() {
     const profilePic = document.getElementById('profile-pic');
-    profilePic.classList.add('slide-in');
+
+    // Check if the profilePic element exists
+    if (profilePic) {
+        profilePic.classList.add('slide-in');
+    } else {
+        console.error("Element with id 'profile-pic' not found.");
+    }
 }
 
+// Function to toggle theme
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
     // Save the theme preference to local storage
@@ -42,6 +66,7 @@ function toggleTheme() {
     adjustImageStyleWithAnimation();
 }
 
+// Function to adjust image style
 function adjustImageStyle() {
     const profilePic = document.getElementById('profile-pic');
 
@@ -53,6 +78,7 @@ function adjustImageStyle() {
     }
 }
 
+// Function to adjust image style with animation
 function adjustImageStyleWithAnimation() {
     const profilePic = document.getElementById('profile-pic');
 
@@ -67,24 +93,19 @@ function adjustImageStyleWithAnimation() {
         profilePic.classList.remove('border-transition');
     }, 500); // Adjust the duration to match the CSS transition duration
 }
-//education details toggle
-function toggleDetails(elementId) {
-        const details = document.getElementById(elementId);
-        details.classList.toggle('show-details');
+
+// Function to show/hide content by ID
+function showContent(id) {
+    var contentElement = document.getElementById(id);
+
+    if (contentElement) {
+        contentElement.style.display = (contentElement.style.display === 'none' || contentElement.style.display === '') ? 'block' : 'none';
+    } else {
+        console.error("Element not found with ID:", id);
     }
-	
-
-//submitform
-function submitForm() {
-    var form = document.getElementById("contactForm");
-    var formData = new FormData(form);
-
-    // Your existing AJAX code to handle form submission
-
-    // Prevent the default form submission
-    e.preventDefault();
 }
 
+// Function to submit the form
 function submitForm() {
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
@@ -117,17 +138,4 @@ function submitForm() {
     };
 
     xhr.send(formData);
-}
-document.addEventListener('DOMContentLoaded', function () {
-            var profilePic = document.getElementById('profile-pic');
-            var profileInfo = document.querySelector('.profile-info');
-
-            profilePic.addEventListener('click', function () {
-                profileInfo.classList.toggle('active');
-            });
-        });
-
-function showContent(id) {
-  var details = document.getElementById(id);
-  details.style.display = (details.style.display === 'none' || details.style.display === '') ? 'block' : 'none';
 }
