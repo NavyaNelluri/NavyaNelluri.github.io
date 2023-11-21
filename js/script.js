@@ -7,23 +7,26 @@ window.onload = function () {
         document.body.classList.add('dark-theme');
     }
 
-    // Add these lines to apply the active class
     const profileInfo = document.querySelector('.profile-info');
     const profilePic = document.getElementById('profile-pic');
 
     profilePic.addEventListener('click', function () {
+        profileInfo.classList.toggle('info-slide-in');
         profileInfo.classList.toggle('active');
     });
 
     // Listen for the end of the profile pic transition
     profilePic.addEventListener('transitionend', function () {
         // Trigger the animation for profile info after the profile pic transition is complete
-        profileInfo.classList.toggle('info-slide-in');
+        if (profileInfo.classList.contains('active')) {
+            profileInfo.classList.add('info-slide-in');
+        }
     });
 
     // Trigger the animation for profile pic on every refresh
     triggerSlideInAnimation();
 };
+
 
 // Function to trigger slide-in animation
 function triggerSlideInAnimation() {
