@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-        function showContent(id) {
+        function showContent() {
 console.log("function called");
 
     // Get the element by ID
