@@ -10,23 +10,22 @@ window.onload = function () {
     // Apply slide-in animation on load
     triggerSlideInAnimation();
 
-
+    // Add these lines to apply the active class and start info animation
+    const profileInfo = document.querySelector('.profile-info');
+    profileInfo.classList.add('active');
 
     // Listen for the end of the profile pic transition
     const profilePic = document.getElementById('profile-pic');
     profilePic.addEventListener('transitionend', function () {
         // Trigger the animation for profile info after the profile pic transition is complete
+        profileInfo.classList.add('info-slide-in');
     });
 
     // Trigger the animation for profile pic and info on every refresh
     triggerSlideInAnimation();
+    profileInfo.classList.add('info-slide-in');
 };
-function toggleProfileInfo() {
-    var profileInfo = document.getElementById("profile-info");
-    profileInfo.classList.toggle("active");
-}
 
-document.getElementById("profile-pic").addEventListener("click", toggleProfileInfo);
 // Function to trigger slide-in animation
 function triggerSlideInAnimation() {
     const profilePic = document.getElementById('profile-pic');
@@ -68,9 +67,38 @@ function adjustImageStyleWithAnimation() {
         profilePic.classList.remove('border-transition');
     }, 500); // Adjust the duration to match the CSS transition duration
 }
+//education details toggle
+function toggleDetails(elementId) {
+        const details = document.getElementById(elementId);
+        details.classList.toggle('show-details');
+    }
+	
+function submitForm() {
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
+    // You can perform further actions with the form data, such as validation or sending it to a server.
 
+    // For now, let's log the data to the console
+    console.log('Form Data:', { name, email, message });
 
+    // Optionally, you can clear the form fields after submission
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+}
+//submitform
+function submitForm() {
+    var form = document.getElementById("contactForm");
+    var formData = new FormData(form);
+
+    // Your existing AJAX code to handle form submission
+
+    // Prevent the default form submission
+    e.preventDefault();
+}
 
 function submitForm() {
     var name = document.getElementById("name").value;
@@ -83,16 +111,13 @@ function submitForm() {
     formData.append("message", message);
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://formspree.io/f/mgejbqko", true); // Update with your Formspree endpoint
+    xhr.open("POST", "https://formspree.io/f/mleykvjy", true); // Update with your Formspree endpoint
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
             if (xhr.status == 200 || xhr.status == 0) { // Status 0 is for local testing
-                // Parse the JSON response
-                var response = JSON.parse(xhr.responseText);
-                
-                // Check the 'success' property in the response
-                if (response.success) {
+                // Handle the response, you can show a success message or redirect the user
+                if (xhr.responseText === "success") {
                     console.log("Form submitted successfully!");
                     // You can add a success message or redirect the user to a thank you page
                 } else {
@@ -108,3 +133,5 @@ function submitForm() {
 
     xhr.send(formData);
 }
+
+
