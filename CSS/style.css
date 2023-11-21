@@ -60,10 +60,7 @@ body.dark-theme {
 }
 
 /* Changed this CSS rule to directly target the profile picture element */
-.active {
-  transform: scale(1.2);
-  border-color: #f00; /* Change border color to indicate active state */
-}
+
 
 /* Add this style to hide profile-info initially */
 .profile-info {
