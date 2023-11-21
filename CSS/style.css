@@ -42,53 +42,24 @@ body.dark-theme {
     position: absolute;
 	top: 30px;
     left: -250px; /* Initial position outside the viewport */
-    z-index: 10; /* Set a higher z-index to ensure the image appears behind other content */
+    z-index: -1; /* Set a higher z-index to ensure the image appears behind other content */
     cursor: pointer; /* Add cursor pointer for interaction */
 }
 
-
-.dark-theme #profile-pic {
-  border-color: #fff;
-}
-
-.slide-in {
-  transform: translateY(50px);
-}
-
-.border-transition {
-  transition: border-color 0.5s ease-in-out;
-}
-
-/* Changed this CSS rule to directly target the profile picture element */
-
-
-/* Add this style to hide profile-info initially */
 .profile-info {
     position: absolute;
-    top: 20%;
+    top: 20%; /* Adjust the top position */
     left: 60%;
     text-align: left;
     transform: translate(-50%, 100%);
     opacity: 0;
-	color: #000; /* Set a color that contrasts with the background */
-
-    visibility: visible; /* Hide initially */
-    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Delay visibility */
-}
-.visible {
-    display: block !important; /* Use !important to override inline styles */
-    opacity: 1; /* Ensure opacity is set to 1 when visible */
-    visibility: visible; /* Ensure visibility is set to visible when visible */
-        transition: opacity 0.5s, visibility 0.5s; /* Add a transition for smooth visibility changes */
-
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-#profile-info {
-    display: none; /* Hide by default */
-    transition: opacity 0.5s; /* Add a transition for opacity if needed */
-    /* Add other styles as needed */
+.profile-info.active {
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
-
 
 #home {
     padding-top: 200px; /* Adjust the padding for smaller screens */
